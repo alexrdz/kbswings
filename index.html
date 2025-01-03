@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kettlebell Swing Counter">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <div class="sync-buttons">
+      <button id="syncbutton">Sync Up</button>
+      <button id="syncdownbutton">Sync Down</button>
+    </div>
+
+    <section id="counter" data-stack>
+      <h1>Kettlebell Swings</h1>
+      <span id="count">0</span>
+      <div data-cluster="center">
+        <button class="decrement">- 1</button>
+        <button class="increment">+ 1</button>
+      </div>
+      <div data-cluster="center">
+        <button class="decrement" data-count="10">- 10</button>
+        <button class="increment" data-count="10">+ 10</button>
+      </div>
+    </section>
+
+    <section id="history" data-stack>
+      <h2>History</h2>
+      <button id="toggle-view">Switch to List View</button>
+      <div id="calendar-nav">
+        <button id="prev-month">&lt; Previous</button>
+        <button id="next-month">Next &gt;</button>
+      </div>
+      <div id="calendar-view"></div>
+      <div id="list-view" style="display: none;"></div>
+
+      <div class="total">
+        <code>
+          Total Monthly Swings: <span id="totalswings">0</span>
+        </code>
+      </div>
+    </section>
+
+    <section id="data">
+      <canvas id="swingChart" width="400" height="200"></canvas>
+      <div></div>
+    </section>
+  </div>
+  <script src="bundle.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+@import './reset.css';
+html, body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: "B612 Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#app {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  height: 100vh;
+
+  > section {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+}
+
+[data-stack] {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+[data-cluster] {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+[data-cluster~="center"] {
+  justify-content: center;
+}
+[data-cluster~="between"] {
+  justify-content: space-between;
+}
+
+button {
+  background-color: transparent;
+  border: 1px dashed #cdcdcd;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.sync-buttons {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+
+section {
+  text-align: center;
+  min-block-size: 100vh;
+  display: grid;
+  place-content: center;
+}
+#counter, #history {
+  margin: 2rem auto;
+  max-inline-size: 30ch;
+
+  > span {
+    font-size: 4rem;
+    text-align: center;
+  }
+}
+
+#history {
+  margin-top: 30px;
+}
+
+table { inline-size: 100%; }
+.current-date {
+  background-color: #ffcc00;
+}
+td { border: 1px solid #dfdfdf; }
+[data-date] {
+  span {
+    display: block;
+
+    &:first-of-type {
+      font-size: .5rem;
+      text-align: right;
+    }
+  }
+}
+ul { padding: 0; margin: 1rem 0; text-align: left; }
